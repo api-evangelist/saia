@@ -4,84 +4,34 @@ schema: https://raw.githubusercontent.com/api-evangelist/interface-research/main
 provider: Saia Inc
 providerId: saia
 created: '2026-05-04'
-modified: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
 tags:
   - Freight
-  - Trucking
-  - Logistics
+  - LTL
+  - B2B
   - Rate Limiting
-  - Quotas
-  - Throttling
-description: Machine-readable rate limit definitions for the Saia Inc API surface. Captures per-tier quotas,
-  burst behavior, response signaling, and recovery semantics. Defaults are scaffold values to be replaced
-  with published provider limits.
-headers:
-  limit: X-RateLimit-Limit
-  remaining: X-RateLimit-Remaining
-  reset: X-RateLimit-Reset
-  retryAfter: Retry-After
-  policy: RateLimit-Policy
-responseCodes:
-  throttled: 429
-  quotaExceeded: 429
-  serviceUnavailable: 503
+description: Saia does not publish API rate limits in any public surface. Rate-limit and throughput parameters
+  are defined per onboarding agreement and per partner integration with Saia Customer Technology. This
+  artifact is intentionally a Contact Sales placeholder.
+sources:
+  - https://www.saia.com/our-services/customer-technology/api-solutions
+notes: No public per-second / per-minute throttle numbers were located. Limits are negotiated during integration
+  onboarding.
 limits:
-  - tier: free
-    name: Free Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 10
-    burst: 20
-    timeFrame: minute
-    applies:
-      - Saia Inc API
-  - tier: free
-    name: Free Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 1000
-    timeFrame: month
-    applies:
-      - Saia Inc API
-  - tier: professional
-    name: Professional Tier Default
-    scope: api-key
-    metric: requests_per_minute
-    limit: 100
-    burst: 200
-    timeFrame: minute
-    applies:
-      - Saia Inc API
-  - tier: professional
-    name: Professional Tier Monthly Quota
-    scope: api-key
-    metric: requests_per_month
-    limit: 100000
-    timeFrame: month
-    applies:
-      - Saia Inc API
-  - tier: enterprise
-    name: Enterprise Negotiated Limit
-    scope: contract
-    metric: requests_per_minute
-    limit: 1000
-    burst: 5000
-    timeFrame: minute
-    applies:
-      - Saia Inc API
+  - name: Contracted API throttling
+    scope: account
+    metric: varies
+    limit: contact carrier integration team
+    notes: Saia issues throttle and concurrency expectations during partner onboarding. Numeric values
+      are not public.
 policies:
-  - name: Backoff Strategy
-    description: Clients should implement exponential backoff with jitter, honoring the Retry-After header
-      when present.
-  - name: Burst Handling
-    description: Short bursts above the steady-state limit are tolerated up to the documented burst ceiling
-      before throttling engages.
-  - name: Quota Reset
-    description: Monthly quotas reset at the start of each calendar month in UTC. Per-minute and per-second
-      windows reset on a sliding-window basis.
-  - name: Fair Use
-    description: Even on uncapped enterprise tiers, sustained usage that materially impacts shared infrastructure
-      may be subject to fair-use throttling.
+  - name: Per-partner enforcement
+    description: Throttling is bound to the partner credential / contract; behavior under bursts is set
+      with the integration team.
+  - name: Onboarding-driven sizing
+    description: Throughput is right-sized during onboarding based on shipment volume and use case (rating
+      vs tracking vs documents).
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
