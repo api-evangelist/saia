@@ -28,6 +28,8 @@ apis:
     description: >-
       The Saia Inc API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: LinkedIn
+    url: https://www.linkedin.com/company/saia-inc
   - type: Website
     url: https://www.saia.com
 maintainers:
