@@ -2,7 +2,7 @@ aid: saia
 url: https://raw.githubusercontent.com/api-evangelist/saia/refs/heads/main/apis.yml
 name: Saia Inc
 type: Index
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
 tags:
   - Freight
   - Trucking
@@ -19,7 +19,7 @@ apis:
       - Freight
       - Trucking
       - Logistics
-    image: https://kinlane-productions2.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+    image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
     baseURL: https://api.saia.com
     humanURL: https://developer.saia.com
     properties:
