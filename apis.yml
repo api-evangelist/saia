@@ -32,7 +32,7 @@ common:
     url: https://www.linkedin.com/company/saia-inc
   - type: Website
     url: https://www.saia.com
-  - type: LLMsTxt
+  - type: LlmsText
     url: https://saia.com/llms.txt
 maintainers:
   - FN: Kin Lane
