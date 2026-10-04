@@ -1,6 +1,6 @@
 aid: saia
 url: https://raw.githubusercontent.com/api-evangelist/saia/refs/heads/main/apis.yml
-name: Saia Inc
+name: Saia
 type: Index
 deliveryModel:
   model: unknown
@@ -62,3 +62,4 @@ common:
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
+x-legal-name: Saia Inc
