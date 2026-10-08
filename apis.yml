@@ -51,6 +51,12 @@ apis:
     description: >-
       The Saia Inc API provides access to platform services and data for enterprise integration and automation.
 common:
+  - type: Plans
+    url: plans/saia-plans-pricing.yml
+  - type: RateLimits
+    url: rate-limits/saia-rate-limits.yml
+  - type: FinOps
+    url: finops/saia-finops.yml
   - url: https://www.saia.com/blog/
     type: Blog
   - type: DomainSecurity
